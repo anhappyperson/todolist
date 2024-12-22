@@ -1,0 +1,45 @@
+dataSources:
+  # Multiple data source configuration
+  ds_0:
+    dataSourceClassName: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    jdbcUrl: jdbc:mysql://154.8.201.55:3306/todolist_0?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: todolist
+    password: BNz5zjW8tC4ytjKN
+
+rules:
+- !SHARDING
+  tables:
+    users:
+      actualDataNodes: ds_0.users_${0..19}
+      tableStrategy:
+        standard:
+          shardingColumn: id
+          shardingAlgorithmName: user_id_mode_20
+    todolist:
+      actualDataNodes: ds_0.todolist_${0..19}
+      tableStrategy:
+        standard:
+          shardingColumn: id
+          shardingAlgorithmName: todolist_id_mode_20
+    todolist_user_relation:
+      actualDataNodes: ds_0.todolist_user_relation_${0..19}
+      tableStrategy:
+        standard:
+          shardingColumn: user_id
+          shardingAlgorithmName: relation_user_id_mode_20
+  shardingAlgorithms:
+    user_id_mode_20:
+      type: INLINE
+      props:
+        algorithm-expression: users_${id % 20}
+    todolist_id_mode_20:
+      type: INLINE
+      props:
+        algorithm-expression: todolist_${id % 20}
+    relation_user_id_mode_20:
+      type: INLINE
+      props:
+        algorithm-expression: todolist_user_relation_${user_id % 20}
+props:
+  sql-show: true
