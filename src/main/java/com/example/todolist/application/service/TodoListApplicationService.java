@@ -28,7 +28,6 @@ public class TodoListApplicationService {
      * @param limit  限制
      * @return {@link List }
      * @author 何佳琦  hejiaqi@itbox.cn
-     * @date 2024/12/21 19:59:36
      */
     public List<TodoList> findTodoListsByUserIdOrderByScore(long userId, int limit) {
         // 查询用户基本信息

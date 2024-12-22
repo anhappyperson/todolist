@@ -8,7 +8,6 @@ import lombok.Data;
 /**
  * @author 何佳琦
  * @version 1.0.0
- * @date 2024-12-22
  */
 @Data
 public class TodoListResponse implements Serializable {
