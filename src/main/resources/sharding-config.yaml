@@ -1,5 +1,4 @@
 dataSources:
-  # Multiple data source configuration
   ds_0:
     dataSourceClassName: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.jdbc.Driver
@@ -29,17 +28,21 @@ rules:
           shardingColumn: user_id
           shardingAlgorithmName: relation_user_id_mode_20
   shardingAlgorithms:
+    # users table sharding algorithm detail
     user_id_mode_20:
       type: INLINE
       props:
         algorithm-expression: users_${id % 20}
+    # todolist table sharding algorithm detail
     todolist_id_mode_20:
       type: INLINE
       props:
         algorithm-expression: todolist_${id % 20}
+    # relation_user_relation table sharding algorithm detail
     relation_user_id_mode_20:
       type: INLINE
       props:
         algorithm-expression: todolist_user_relation_${user_id % 20}
+# show sql detail include LogicSQL&ActualSQL in console
 props:
   sql-show: true
