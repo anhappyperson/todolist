@@ -4,10 +4,10 @@ import com.example.todolist.domain.todolist.entity.TodoList;
 import com.example.todolist.domain.todolist.entity.TodoListUserRelation;
 import com.example.todolist.domain.todolist.repository.ITodoListRepository;
 import com.example.todolist.domain.todolist.repository.ITodoListUserRelationRepository;
-import jakarta.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,13 +15,12 @@ import org.springframework.stereotype.Service;
  * @version 1.0.0
  */
 @Service
+@RequiredArgsConstructor
 public class TodoListDomainService {
 
-    @Resource
-    ITodoListRepository todoListRepository;
+    private final ITodoListRepository todoListRepository;
 
-    @Resource
-    ITodoListUserRelationRepository todoListUserRelationRepository;
+    private final ITodoListUserRelationRepository todoListUserRelationRepository;
 
 
     public List<TodoList> findTodoListByUserOrderByScore(long userId, int limit) {
