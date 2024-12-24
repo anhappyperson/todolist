@@ -34,6 +34,14 @@ Currently, sharding for the table can roughly show the logic of database and tab
 
 > When you startup this java application and send a http request. The ide console will show Logic SQL&Actual SQL to better review the detail SQL infomation.
 
+# Cache
+
+When call query api, the demo code show the use of cache in a very simple way. If in a production env, we need consider many issues as :
+
+- Consistency
+- Hit Rate
+- Cache Granularity
+
 # Test
 
 This project used Integration Test instead of Unit Test, for the following reasons:

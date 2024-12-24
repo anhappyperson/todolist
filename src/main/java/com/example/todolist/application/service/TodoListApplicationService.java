@@ -24,8 +24,8 @@ public class TodoListApplicationService {
     private final TodoListDomainService todoListDomainService;
 
     /**
-     * 1. call user domain service -> query&check user
-     * 2. call todolist domain service -> query todolist data
+     * 1. query&check user
+     * 2. query todolist data (cache or database)
      *
      * @param userId user primary key
      * @param offset top N data quantity
