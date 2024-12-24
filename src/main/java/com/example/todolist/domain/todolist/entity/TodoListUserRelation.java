@@ -17,11 +17,40 @@ import lombok.Setter;
 @Setter
 public class TodoListUserRelation {
 
-    private Long id;
-    private Long todolistId;
-    private Long userId;
+    /**
+     * relation primary id
+     */
+    private long id;
+
+    /**
+     * todolist primary id
+     */
+    private long todolistId;
+
+    /**
+     * user primary id
+     */
+    private long userId;
+
+    /**
+     * current user permission for this todolist
+     * enum: read,write,....
+     */
     private String permissions;
+
+    /**
+     * todolist score
+     * decimal(5,2)
+     */
     private BigDecimal score;
+
+    /**
+     * relation create time
+     */
     private LocalDateTime createAt;
+
+    /**
+     * relation update time
+     */
     private LocalDateTime updateAt;
 }

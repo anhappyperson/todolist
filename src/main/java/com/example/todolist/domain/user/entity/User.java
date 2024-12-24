@@ -22,10 +22,13 @@ public class User {
     private long id;
 
     /**
-     * 用户名
+     * user nickname
      */
     private String username;
 
+    /**
+     * user create time
+     */
     private LocalDateTime createAt;
 
 }

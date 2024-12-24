@@ -18,20 +18,44 @@ import lombok.Setter;
 @Setter
 public class TodoList {
 
+    /**
+     * todolist primary key
+     */
     private long id;
 
+    /**
+     * todolist title
+     */
     private String title;
 
+    /**
+     * todolist admin user id
+     */
     private long ownerId;
 
+    /**
+     * todolist init score
+     */
     private BigDecimal score;
 
+    /**
+     * todolist due time
+     */
     private LocalDateTime dueDate;
 
+    /**
+     * todolist create time
+     */
     private LocalDateTime createAt;
 
+    /**
+     * todolist update time
+     */
     private LocalDateTime updateAt;
 
+    /**
+     * current todolist related user and permission
+     */
     private List<TodoListUserRelation> relations;
 
 }

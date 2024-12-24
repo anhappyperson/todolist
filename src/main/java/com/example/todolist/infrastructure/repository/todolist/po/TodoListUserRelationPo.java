@@ -32,6 +32,7 @@ public class TodoListUserRelationPo {
 
     /**
      * user permissions for this todolist
+     * enum: read,write,....
      */
     private String permissions;
 
