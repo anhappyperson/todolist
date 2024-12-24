@@ -4,10 +4,10 @@ GET /todolist/top
 
 ### Request Parameters
 
-| name   | location | type   | required | decription                           |
-| ------ | -------- | ------ | -------- | ------------------------------------ |
-| userId | query    | string | yes      | users primary key to search todolist |
-| offset | query    | string | no       | top N                                |
+| name   | location | type    | required | decription                           |
+| ------ | -------- | ------- | -------- | ------------------------------------ |
+| userId | query    | string  | yes      | users primary key to search todolist |
+| offset | query    | integer | no       | top N quantity, default value 10     |
 
 > success respone example
 
@@ -109,15 +109,18 @@ GET /todolist/top
 
 http status **200**
 
-| 名称          | 类型     | 必选 | 约束 |
-| ------------- | -------- | ---- | ---- |
-| » success     | boolean  | true | none |
-| » requestId   | string   | true | none |
-| » serverTime  | integer  | true | none |
-| » code        | integer  | true | none |
-| » msg         | string   | true | none |
-| » data        | [object] | true | none |
-| »» todolistId | integer  | true | none |
-| »» title      | string   | true | none |
-| »» ownerId    | integer  | true | none |
+| name           | type     | required |
+| -------------- | -------- | -------- |
+| » success      | boolean  | true     |
+| » requestId    | string   | true     |
+| » serverTime   | integer  | true     |
+| » code         | integer  | true     |
+| » msg          | string   | true     |
+| » data         | [object] | true     |
+| »» todolistId  | integer  | true     |
+| »» title       | string   | true     |
+| »» ownerId     | integer  | true     |
+| »» score       | decimal  | true     |
+| »» permissions | string   | true     |
+| »» dueDate     | string   | true     |
 
