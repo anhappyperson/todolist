@@ -24,15 +24,11 @@ reference API.MD
 
 Tables include users, todolist and todolist_user_relation, which store user info,todolist info, and the relation between user and their todolist.
 
-Using Apache ShardingShpere as sharding database and table component lib. The sharding algorithm rule:
+Based on the content of the previous test, the core technical difficulty is the storage and querying massive amounts of data, and using database sharding can reduce the pressure on the database. Using Apache ShardingShpere as sharding database and table component lib. The sharding algorithm rules:
 
 - users：userId % 20 to sharding table
 - todolist：todolistId % 20 to sharding table
 - todolist_user_relation：userId % 20 to sharding table
-
-Based on pre test
-
-根据上一个测试内容，海量数据的存储和查询是核心技术难点，使用分库分表可以大幅度缓解数据库压力，
 
 Currently, sharding for the table can roughly show the logic of database and table sharding. This project only has one data source, ds_0. Detailed infomation reference resources/sharding-config.yaml
 
