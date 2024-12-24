@@ -4,6 +4,7 @@ import com.example.todolist.domain.todolist.entity.TodoList;
 import com.example.todolist.domain.todolist.service.TodoListDomainService;
 import com.example.todolist.domain.user.entity.User;
 import com.example.todolist.domain.user.service.UserDomainService;
+import java.util.Collections;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,21 +23,22 @@ public class TodoListApplicationService {
 
 
     /**
-     * 按用户id按分数排序查找待办事项列表
+     * 1. call user domain service -> query&check user
+     * 2. call todolist domain service -> query todolist data
      *
-     * @param userId 用户id
-     * @param limit  限制
+     * @param userId user primary key
+     * @param offset top N data quantity
      * @return {@link List }
-     * @author 何佳琦  hejiaqi@itbox.cn
+     * @author 何佳琦 
      */
-    public List<TodoList> findTodoListsByUserIdOrderByScore(long userId, int limit) {
-        // 查询用户基本信息
+    public List<TodoList> findTodoListsByUserIdOrderByScore(long userId, int offset) {
+        // query user by id
         User user = userDomainService.findUserById(userId);
         if (user == null) {
-            return null;
+            return Collections.emptyList();
         }
-        // 查询 todolist
-        return todoListDomainService.findTodoListByUserOrderByScore(user.getId(), limit);
+        // query todolist
+        return todoListDomainService.findTodoListByUserOrderByScore(user.getId(), offset);
     }
 
 }

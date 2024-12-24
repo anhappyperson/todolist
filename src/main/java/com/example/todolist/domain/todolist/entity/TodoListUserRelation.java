@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
+ * todolist user relation entity
+ *
  * @author 何佳琦
  * @version 1.0.0
  */

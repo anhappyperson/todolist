@@ -8,13 +8,23 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 /**
+ * ORM actual SQL execution mapper
+ * table: todolist
+ *
  * @author 何佳琦
  * @version 1.0.0
  */
 @Mapper
 public interface TodoListMapper extends BaseMapper<TodoListPo> {
 
-    //@Select("select * from todolist where id in #{todolistIdList}")
+    /**
+     * find multi todolist by primary id
+     * ShardingSphere will sharding target table by todolistId%20
+     *
+     * @param todolistIdList target todolist primary key list
+     * @return {@link List }<{@link TodoListPo }>
+     * @author 何佳琦 
+     */
     @Select({
         "<script>",
         "SELECT * FROM todolist",

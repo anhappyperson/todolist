@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
+ * todolist domain layer repository definition impl class
+ *
  * @author 何佳琦
  * @version 1.0.0
  */
@@ -20,6 +22,14 @@ public class TodoListRepositoryImpl implements ITodoListRepository {
     private final TodoListMapper todoListMapper;
 
 
+    /**
+     * find multi todolist by primary id
+     * assembler convert po to entity
+     *
+     * @param todolistIdList target todolist primary key list
+     * @return {@link List }<{@link TodoList }>
+     * @author 何佳琦 
+     */
     @Override
     public List<TodoList> findTodolistByIdList(List<Long> todolistIdList) {
         List<TodoListPo> poList = todoListMapper.findTodolistByIdList(todolistIdList);

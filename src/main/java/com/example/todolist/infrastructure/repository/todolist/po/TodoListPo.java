@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
 import lombok.Data;
 
 /**
+ * persistent object for table todolist
+ *
  * @author 何佳琦
  * @version 1.0.0
  */
@@ -15,12 +17,39 @@ import lombok.Data;
 @TableName("todolist")
 public class TodoListPo {
 
-    @TableId(type = IdType.AUTO)
+    /**
+     * primary id
+     */
     private Long id;
+
+    /**
+     * todolist title
+     */
     private String title;
+
+    /**
+     * todolist admin user
+     */
     private Long ownerId;
+
+    /**
+     * todolist score
+     * decimal(5,2)
+     */
     private BigDecimal score;
+
+    /**
+     * due time
+     */
     private LocalDateTime dueDate;
+
+    /**
+     * create time
+     */
     private LocalDateTime createAt;
+
+    /**
+     * update time
+     */
     private LocalDateTime updateAt;
 }

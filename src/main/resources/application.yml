@@ -1,6 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    # ShardingSphere Config
     url: jdbc:shardingsphere:classpath:sharding-config.yaml
 
 mybatis-plus:

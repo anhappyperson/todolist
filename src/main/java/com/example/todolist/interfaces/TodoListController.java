@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * todolist api controller
+ *
  * @author 何佳琦
- * @version 1.0.0
  */
 @RestController()
 @RequestMapping("/todolist")
@@ -24,6 +25,14 @@ public class TodoListController {
     private final TodoListApplicationService todoListApplicationService;
 
 
+    /**
+     * find a user top N todolist reverse order by score
+     *
+     * @param userId user primary key
+     * @param offset user top N todolist quantity
+     * @return {@link Response }
+     * @author 何佳琦 
+     */
     @GetMapping(value = "/top")
     @ResponseBody
     public Response top(
@@ -31,6 +40,7 @@ public class TodoListController {
         @RequestParam(value = "offset", required = false, defaultValue = "10") Integer offset
     ) {
         List<TodoList> data = todoListApplicationService.findTodoListsByUserIdOrderByScore(userId, offset);
+        // build response and return
         return Response.of(TodolistTopConvert.INSTANCE.convert(data));
     }
 
