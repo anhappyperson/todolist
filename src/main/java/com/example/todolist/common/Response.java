@@ -46,7 +46,7 @@ public class Response implements Serializable {
     private Object data;
 
     /**
-     * build return value by biz data
+     * build return value with biz data
      *
      * @param data biz data
      * @return {@link Response }
@@ -59,6 +59,22 @@ public class Response implements Serializable {
         response.setServerTime(System.currentTimeMillis());
         response.setMsg("ok");
         response.setData(data);
+        response.setCode(200);
+        return response;
+    }
+
+    /**
+     * build return value with none biz data
+     *
+     * @return {@link Response }
+     * @author 何佳琦
+     */
+    public static Response of() {
+        Response response = new Response();
+        response.setSuccess(true);
+        response.setRequestId(UUID.randomUUID().toString());
+        response.setServerTime(System.currentTimeMillis());
+        response.setMsg("ok");
         response.setCode(200);
         return response;
     }

@@ -7,6 +7,7 @@ import com.example.todolist.domain.todolist.entity.TodoList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -42,6 +43,24 @@ public class TodoListController {
         List<TodoList> data = todoListApplicationService.findTodoListsByUserIdOrderByScore(userId, offset);
         // build response and return
         return Response.of(TodolistTopConvert.INSTANCE.convert(data));
+    }
+
+
+    /**
+     * any other update operation
+     *
+     * @param userId user primary key
+     * @return {@link Response }
+     * @author 何佳琦
+     */
+    @PostMapping(value = "/anyOtherUpdate")
+    @ResponseBody
+    public Response anyOtherUpdate(@RequestParam(value = "userId") Long userId) {
+        // other code
+        // ....
+
+        todoListApplicationService.anyOtherUpdate(userId);
+        return Response.of();
     }
 
 }
