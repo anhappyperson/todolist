@@ -35,14 +35,14 @@ public class TodolistTopTest {
      * @author 何佳琦
      */
     @Test
-    void testTodolistTopOffset(){
+    void testTodolistTopOffset() {
         // offset 10
         List<TodoList> list = service.findTodoListsByUserIdOrderByScore(USER_ID_EXIST, 10);
         Assertions.assertNotNull(list);
         Assertions.assertFalse(list.isEmpty());
         Assertions.assertEquals(10, list.size());
         for (int i = 0; i < list.size() - 1; i++) {
-            Assertions.assertTrue(list.get(i).getScore().compareTo(list.get(i+1).getScore()) >= 0);
+            Assertions.assertTrue(list.get(i).getScore().compareTo(list.get(i + 1).getScore()) >= 0);
         }
     }
 
@@ -54,7 +54,7 @@ public class TodolistTopTest {
      * @author 何佳琦
      */
     @Test
-    void testTodolistTopNotExistScenarios(){
+    void testTodolistTopNotExistScenarios() {
         List<TodoList> list = service.findTodoListsByUserIdOrderByScore(USER_ID_NOT_EXIST, 10);
         Assertions.assertNotNull(list);
         Assertions.assertTrue(list.isEmpty());

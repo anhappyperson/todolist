@@ -22,7 +22,7 @@ public interface TodoListUserRelationPoConvert {
      *
      * @param po persistent object
      * @return {@link TodoListUserRelation }
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     TodoListUserRelation convert(TodoListUserRelationPo po);
 
@@ -31,7 +31,7 @@ public interface TodoListUserRelationPoConvert {
      *
      * @param poList persistent object list
      * @return {@link List }<{@link TodoListUserRelation }>
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     List<TodoListUserRelation> convert(List<TodoListUserRelationPo> poList);
 

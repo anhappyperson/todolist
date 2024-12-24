@@ -8,7 +8,6 @@ import org.mapstruct.factory.Mappers;
 /**
  * po convert to entity mapstruct mapper util
  *
- *
  * @author 何佳琦
  * @version 1.0.0
  */
@@ -22,7 +21,7 @@ public interface UserPoConvert {
      *
      * @param po persistent object
      * @return {@link User }
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     User convert(UserPo po);
 

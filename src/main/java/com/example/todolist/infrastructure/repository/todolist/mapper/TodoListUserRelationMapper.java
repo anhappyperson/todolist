@@ -25,7 +25,7 @@ public interface TodoListUserRelationMapper extends BaseMapper<TodoListUserRelat
      * @param userId user primary key
      * @param offset top N data quantity
      * @return {@link List }<{@link TodoListUserRelationPo }>
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     @Select("select * from todolist_user_relation where user_id = #{userId} order by score desc limit 0,#{offset}")
     List<TodoListUserRelationPo> findRelationListByUserIdOrderByScore(@Param("userId") long userId,

@@ -26,7 +26,7 @@ public class UserRepositoryImpl implements IUserRepository {
      *
      * @param id user primary key
      * @return {@link User }
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     @Override
     public User findUserById(long id) {

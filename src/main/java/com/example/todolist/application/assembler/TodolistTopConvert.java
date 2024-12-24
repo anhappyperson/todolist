@@ -25,7 +25,7 @@ public interface TodolistTopConvert {
      *
      * @param entity domain entity
      * @return {@link TodoListResponse }
-     * @author 何佳琦  hejiaqi@itbox.cn
+     * @author 何佳琦
      */
     @Mapping(target = "permissions", source = "entity.relations", qualifiedByName = "getRelationPermissions")
     @Mapping(target = "todolistId", source = "id")
@@ -36,7 +36,7 @@ public interface TodolistTopConvert {
      *
      * @param relationList todolistUserRelations
      * @return {@link String }
-     * @author 何佳琦  hejiaqi@itbox.cn
+     * @author 何佳琦
      */
     @Named("getRelationPermissions")
     default String getRelationPermissions(List<TodoListUserRelation> relationList) {
@@ -48,7 +48,7 @@ public interface TodolistTopConvert {
      *
      * @param entityList domain entity list
      * @return {@link List }<{@link TodoListResponse }>
-     * @author 何佳琦  hejiaqi@itbox.cn
+     * @author 何佳琦
      */
     List<TodoListResponse> convert(List<TodoList> entityList);
 

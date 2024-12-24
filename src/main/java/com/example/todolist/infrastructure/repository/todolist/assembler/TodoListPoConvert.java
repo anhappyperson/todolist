@@ -23,7 +23,7 @@ public interface TodoListPoConvert {
      *
      * @param po persistent object
      * @return {@link TodoList }
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     @Mapping(target = "relations", ignore = true)
     TodoList convert(TodoListPo po);
@@ -33,7 +33,7 @@ public interface TodoListPoConvert {
      *
      * @param poList persistent object list
      * @return {@link List }<{@link TodoList }>
-     * @author 何佳琦 
+     * @author 何佳琦
      * @date 2024/12/24 09:59:02
      */
     List<TodoList> convert(List<TodoListPo> poList);

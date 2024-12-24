@@ -28,7 +28,7 @@ public class TodoListRepositoryImpl implements ITodoListRepository {
      *
      * @param todolistIdList target todolist primary key list
      * @return {@link List }<{@link TodoList }>
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     @Override
     public List<TodoList> findTodolistByIdList(List<Long> todolistIdList) {

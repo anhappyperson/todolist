@@ -4,7 +4,6 @@ import com.example.todolist.domain.todolist.entity.TodoList;
 import com.example.todolist.domain.todolist.entity.TodoListUserRelation;
 import com.example.todolist.domain.todolist.repository.ITodoListRepository;
 import com.example.todolist.domain.todolist.repository.ITodoListUserRelationRepository;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -34,7 +33,7 @@ public class TodoListDomainService {
      * @param userId user primary key
      * @param offset top N data quantity
      * @return {@link List }<{@link TodoList }>
-     * @author 何佳琦  hejiaqi@itbox.cn
+     * @author 何佳琦
      */
     public List<TodoList> findTodoListByUserOrderByScore(long userId, int offset) {
         // query relation list
@@ -53,8 +52,7 @@ public class TodoListDomainService {
                    // fill relation info (permissions)
                    .peek(todoList -> {
                        for (TodoListUserRelation relation : relationList) {
-                           if (relation.getUserId().equals(userId)
-                               && relation.getTodolistId().equals(todoList.getId())) {
+                           if (relation.getUserId() == userId && relation.getTodolistId() == todoList.getId()) {
                                todoList.setRelations(List.of(relation));
                                break;
                            }

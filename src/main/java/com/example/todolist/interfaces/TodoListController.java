@@ -31,7 +31,7 @@ public class TodoListController {
      * @param userId user primary key
      * @param offset user top N todolist quantity
      * @return {@link Response }
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     @GetMapping(value = "/top")
     @ResponseBody

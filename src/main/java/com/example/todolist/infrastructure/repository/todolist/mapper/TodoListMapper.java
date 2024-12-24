@@ -23,7 +23,7 @@ public interface TodoListMapper extends BaseMapper<TodoListPo> {
      *
      * @param todolistIdList target todolist primary key list
      * @return {@link List }<{@link TodoListPo }>
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     @Select({
         "<script>",

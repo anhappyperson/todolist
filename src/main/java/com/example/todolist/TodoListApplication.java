@@ -16,7 +16,7 @@ public class TodoListApplication {
      * app startup method
      *
      * @param args args
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     public static void main(String[] args) {
         SpringApplication.run(TodoListApplication.class);

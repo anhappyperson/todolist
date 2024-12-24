@@ -22,7 +22,7 @@ public interface UserMapper extends BaseMapper<UserPo> {
      *
      * @param id primary id
      * @return {@link UserPo }
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     @Select("select * from users where id = #{id}")
     UserPo findUserById(@Param("id") Long id);

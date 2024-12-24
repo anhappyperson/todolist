@@ -50,7 +50,7 @@ public class Response implements Serializable {
      *
      * @param data biz data
      * @return {@link Response }
-     * @author 何佳琦  hejiaqi@itbox.cn
+     * @author 何佳琦
      */
     public static Response of(Object data) {
         Response response = new Response();

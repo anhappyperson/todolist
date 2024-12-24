@@ -29,7 +29,7 @@ public class TodoListApplicationService {
      * @param userId user primary key
      * @param offset top N data quantity
      * @return {@link List }
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     public List<TodoList> findTodoListsByUserIdOrderByScore(long userId, int offset) {
         // query user by id

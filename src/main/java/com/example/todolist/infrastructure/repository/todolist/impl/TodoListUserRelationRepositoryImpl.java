@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * todolist domain layer repository definition impl class
-
+ *
  * @author 何佳琦
  * @version 1.0.0
  */
@@ -30,7 +30,7 @@ public class TodoListUserRelationRepositoryImpl implements ITodoListUserRelation
      * @param userId user primary id
      * @param offset top N data quantity
      * @return {@link List }<{@link TodoListUserRelation }>
-     * @author 何佳琦 
+     * @author 何佳琦
      */
     @Override
     public List<TodoListUserRelation> findRelationListByUserIdOrderByScore(long userId, int offset) {
